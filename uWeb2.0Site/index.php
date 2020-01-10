@@ -83,10 +83,11 @@ if(isset($_POST['insert']))
 if(isset($_POST['delete']))
 {
     $data = getPosts();
-    $delete_Query = "SELECT * FROM `ecommerce` WHERE `id`= $data[0];
-    trupdate = mysqli_query($connect, $delete_$Query);
+    $delete_Query = "DELETE FROM `ecommerce` WHERE `id`= $data[0]";
+    try{
+        $delete_Result = mysqli_query($connect, $delete_$Query);
 
-update)
+        if($insert_Result)
         {
             if(mysqli_affected_rows($connect) > 0)
             {
